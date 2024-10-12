@@ -1,5 +1,5 @@
 export default async function Home() {
   return (
-    <div>Home</div>
+    <div className="bg-red-700">Home</div>
   );
 }
