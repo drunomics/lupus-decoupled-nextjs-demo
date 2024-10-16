@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 export default function Breadcrumbs({ breadcrumbs }) {
-    console.log('breadcrumbs: ', breadcrumbs);
     if (!breadcrumbs || breadcrumbs.length === 0) {
         return null
     }
