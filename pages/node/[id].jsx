@@ -2,7 +2,8 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { fetchPage, fetchMenu } from "../../lib/drupalClient"
 import Breadcrumbs from "../../components/Breadcrumbs";
-import components from "../../components"
+import DynamicComponent from "../../components/DynamicComponent";
+import { mockData, mockData2 } from "../../mockData";
 
 export default function NodePage() {
     const router = useRouter()
@@ -10,15 +11,14 @@ export default function NodePage() {
     const [nodeData, setNodeData] = useState(null)
     const [error, setError] = useState(null)
 
-    const ComponentToRender = nodeData ? components[nodeData?.content?.element] : null
-
     useEffect(() => {
         if (!id) return
 
         const fetchNodeData = async () => {
             try {
             const response = await fetchPage(id)
-            setNodeData(response)
+            console.log('response: ', response)
+            setNodeData(mockData2)
             
             } catch (err) {
                 setError(err)
@@ -51,9 +51,7 @@ export default function NodePage() {
         <div>
             <Breadcrumbs breadcrumbs={nodeData.breadcrumbs} />
             <h1>{nodeData.title}</h1>
-            {
-                ComponentToRender ? <ComponentToRender content={nodeData.content} />: (<div>No data</div>)
-            }
+            <DynamicComponent element={nodeData.content.element} content={nodeData.content}/>
         </div>
     )
 }
