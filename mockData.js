@@ -247,3 +247,15 @@ export const mockData2 = {
     page_layout: "default",
     local_tasks: []
 }
+
+export const redirectMockData = {
+    redirect: {
+        external: true,
+        url: "http://localhost:3000/node/1",
+        statusCode: 302
+    },
+    messages: [],
+    settings: {
+        display_title: 0
+    }
+}
