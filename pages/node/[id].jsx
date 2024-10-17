@@ -17,8 +17,7 @@ export default function NodePage() {
         const fetchNodeData = async () => {
             try {
             const response = await fetchPage(id)
-            console.log('response: ', response)
-            setNodeData(mockData2)
+            setNodeData(response)
             
             } catch (err) {
                 setError(err)
