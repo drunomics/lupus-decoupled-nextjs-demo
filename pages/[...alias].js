@@ -1,38 +1,35 @@
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { redirectMockData } from '../mockData';
+import { redirectMockData } from "../mockData";
 
 export default function AliasRedirectPage() {
-    
-  const router = useRouter();
-  const { alias } = router.query;
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  return null
+}
 
-  useEffect(() => {
-    if (!alias) return;
+export async function getServerSideProps(context) {
+  const { alias } = context.params
 
-    const fetchRedirect = async () => {
-      try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_DRUPAL_BASE_URL}/${alias.join('/')}`);
-        // const response = redirectMockData
-        if (response.redirect) {
-          const redirectUrl = response.redirect.url;
-          router.push(redirectUrl);
+  try {
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_DRUPAL_BASE_URL}/${alias.join('/')}`);
+    // const response = redirectMockData
+
+    if (response.redirect) {
+      const redirectUrl = response.redirect.url
+
+      return {
+        redirect: {
+          destination: redirectUrl,
+          permanent: false
         }
-      } catch (error) {
-        setError('Error fetching alias: ' + error.message);
-      } finally {
-        setLoading(false);
       }
-    };
+    }
 
-    fetchRedirect();
-  }, [alias, router]);
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
-
-  return null;
+    return {
+      notFound: true
+    }
+  } catch(error) {
+    return {
+      props: {
+        error: error.message
+      }
+    }
+  }
 }
