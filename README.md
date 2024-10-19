@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lupus Decoupled Next.js Demo
 
-## Getting Started
+## Manual setup steps
 
-First, run the development server:
+For local setup you'll get some network error until base URLs are set right. To do so:
+
+1. Set the Drupal base URL(`NEXT_PUBLIC_DRUPAL_BASE_URL`) in `env.file`, e.g. `https://8080-drunomics-lupusdecouple-xeqrf6qqxj3.ws-eu116.gitpod.io`
+   When using a Drupal gitpod/DrupalPod as a backend, make sure to set your environment to "Shared" via the workspace options menu, as found in the dashhboard at https://gitpod.io. That way the frontend can connect to it.
+2. Test it. Best add some content nodes and some menu-items pointing to them. /node/1 of the backend is available under /node/1 in the frontend. You should see some naked frontend with menus, breadcrumbs & basic node-content (body field) working.
+
+
+## Setup
+
+Make sure to install the dependencies:
+
+```bash
+# npm
+npm install
+
+# yarn
+yarn install
+
+# pnpm
+pnpm install
+```
+
+## Development Server
+
+Start the development server on http://localhost:3000
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Production
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Build the application for production:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Locally preview production build:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run preview
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
