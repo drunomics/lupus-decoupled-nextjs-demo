@@ -5,6 +5,7 @@
 - Rendering a tree of custom elements
 - Forwarding /some-page requests to the backend and rendering results
 - breadcrumbs
+- metatags
 
 ## Manual setup steps
 
