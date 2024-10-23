@@ -1,4 +1,4 @@
-import DynamicComponent from "./DynamicComponent";
+import DynamicComponent from "../DynamicComponent";
 
 export default function LayoutSection({ content }) {
     return (
