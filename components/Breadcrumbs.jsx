@@ -6,10 +6,10 @@ export default function Breadcrumbs({ breadcrumbs }) {
     }
 
     return (
-        <nav aria-label="breadcrumb" className="mb-4 bg-red-400">
+        <nav aria-label="breadcrumb" className="my-6 mx-4">
             <ol className="flex list-none space-x-2">
                 {breadcrumbs.map((item, index) => (
-                    <li key={index} className="flex items-center text-blue-300">
+                    <li key={index} className="flex items-center text-blue-600">
                         <Link href={item.url}>
                             {item.label}
                         </Link>
