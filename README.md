@@ -6,6 +6,7 @@
 - Forwarding /some-page requests to the backend and rendering results
 - breadcrumbs
 - metatags
+- messages
 
 ## Try it online
 
