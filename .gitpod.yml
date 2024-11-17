@@ -10,8 +10,8 @@ tasks:
       # For an automated frontend login, set a shared parent domain:
       # ddev config --web-environment-add="DRUPAL_SERVICE_session__storage__options___cookie_domain=.gitpod.io"
       ddev start -y
-      # Install Drush
-      ddev composer require drush/drush --no-update
+      # Ensure drupal/core and Drush are installed
+      ddev composer require drupal/core-recommended:^10.0 drush/drush --no-update
       ddev composer install
       ddev exec drush --version # Verify Drush is installed
       # Drupal installation and configuration
