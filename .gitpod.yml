@@ -5,7 +5,7 @@ image: drupalpod/drupalpod-gitpod-base:20240419
 tasks:
   - init: |
       ddev config --web-environment-add="FRONTEND_REPOSITORY=${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nextjs-demo}"
-      ddev config --web-environment-add="FRONTEND_BRANCH=${FRONTEND_BRANCH:-main}"
+      ddev config --web-environment-add="FRONTEND_BRANCH=${FRONTEND_BRANCH:-LDP-2616-gitpod-link}"
       ddev config --web-environment-add="NEXT_PUBLIC_DRUPAL_BASE_URL=$(gp url 8080)"
       # For an automated frontend login, set a shared parent domain:
       # ddev config --web-environment-add="DRUPAL_SERVICE_session__storage__options___cookie_domain=.gitpod.io"
