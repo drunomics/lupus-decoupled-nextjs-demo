@@ -10,11 +10,13 @@ tasks:
       # For an automated frontend login, set a shared parent domain:
       # ddev config --web-environment-add="DRUPAL_SERVICE_session__storage__options___cookie_domain=.gitpod.io"
       ddev start -y
-      # Ensure drupal/core and Drush are installed
-      ddev composer require drupal/core-recommended:^10.0 drush/drush --no-update
+      # Install Drupal core and Drush
+      ddev composer require drupal/core-recommended:^10.0 drush/drush:^11.0 --no-update
       ddev composer install
-      ddev exec drush --version # Verify Drush is installed
-      # Drupal installation and configuration
+      # Ensure site configuration
+      ddev exec cp sites/default/default.settings.php sites/default/settings.php
+      ddev exec chmod 755 sites/default
+      # Bootstrap Drupal site
       ddev drush si -y --site-name='lupus decoupled' standard
       ddev drush en lupus_decoupled services_env_parameter -y
       ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url $(gp url 3000) -y
