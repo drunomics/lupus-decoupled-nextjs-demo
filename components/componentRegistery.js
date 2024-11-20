@@ -1,4 +1,4 @@
-const requireComponent = require.context('./custom', true, /\.jsx$/);
+const requireComponent = require.context('./custom-elements', true, /\.jsx$/);
 
 const components = {};
 
