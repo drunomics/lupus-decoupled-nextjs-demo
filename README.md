@@ -1,12 +1,22 @@
 # Lupus Decoupled Next.js Demo
 
-## What is supported?
+## Implementation status
+
+### Supported features
 - Rendering custom elements via components
 - Rendering a tree of custom elements
 - Forwarding /some-page requests to the backend and rendering results
 - breadcrumbs
 - metatags
 - messages
+
+### Not or not fully supported
+- Drupal error pages
+- Drupal forms
+- Frontend login
+- Custom layouts
+- Views (component needs to be ported)
+- Drupal tabs (component needs to be ported)
 
 ## Development
 
