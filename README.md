@@ -13,6 +13,7 @@
 ### Not or not fully supported
 - Menus (component needs to be ported)
 - Drupal error pages
+- Drupal redirect support
 - Drupal forms
 - Frontend login
 - Custom layouts
