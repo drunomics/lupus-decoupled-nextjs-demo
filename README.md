@@ -39,26 +39,6 @@ Use the following link:
 https://gitpod.io/new/#DP_PROJECT_NAME=lupus_decoupled,DP_ISSUE_BRANCH=1.x,DP_PROJECT_TYPE=project_module,DP_MODULE_VERSION=1.x,DP_PATCH_FILE=,FRONTEND_REPOSITORY=https%3A%2F%2Fgithub.com%2Fdrunomics%2Flupus-decoupled-nextjs-demo,FRONTEND_BRANCH=<<BRANCH>>,CUSTOM_ELEMENTS_VERSION=3.*,DP_INSTALL_PROFILE=standard/https://github.com/drunomics/lupus-decoupled-project/tree/main
 ```
 
-**Create .env file**
-1. Create a `.env` file in the `frontend` folder in the root of the project.
-2. Open it and add the requirement environment variable
-```bash
-NEXT_PUBLIC_DRUPAL_BASE_URL=""
-```
-3. To set the value for **NEXT_PUBLIC_DRUPAL_BASE_URL**, use your current Gitpod workspace URL and add the prefix **8080-**. For example:
-- If your Gitpod URL is:
-```bash
-https://drunomics-lupusdecouple-1xzgh87c5il.ws-eu116.gitpod.io/
-```
-- Update it to:
-```bash
-https://8080-drunomics-lupusdecouple-1xzgh87c5il.ws-eu116.gitpod.io/
-```
-4. Paste the updated URL into the `.env` file:
-```bash
-NEXT_PUBLIC_DRUPAL_BASE_URL="https://8080-drunomics-lupusdecouple-1xzgh87c5il.ws-eu116.gitpod.io/"
-```
-
 ## Try it online
 
 ### Option 1: Try it Online with Stackblitz
