@@ -1,5 +1,9 @@
 # Lupus Decoupled Next.js Demo
 
+## Try-it
+
+[Launch it on Gitpod](https://gitpod.io/new/#DP_PROJECT_NAME=lupus_decoupled,DP_ISSUE_BRANCH=1.x,DP_PROJECT_TYPE=project_module,DP_MODULE_VERSION=1.x,DP_PATCH_FILE=,FRONTEND_REPOSITORY=https%3A%2F%2Fgithub.com%2Fdrunomics%2Flupus-decoupled-nextjs-demo,CUSTOM_ELEMENTS_VERSION=3.*,DP_INSTALL_PROFILE=standard/https://github.com/drunomics/lupus-decoupled-project/tree/main) with a Lupus Decoupled Drupal backend.
+
 ## Implementation status
 
 ### Supported features
@@ -9,11 +13,11 @@
 - breadcrumbs
 - metatags
 - messages
-
-### Not or not fully supported
-- Menus (component needs to be ported)
 - Drupal error pages
 - Drupal redirect support
+- 
+### Not or not fully supported
+- Menus (component needs to be ported)
 - Drupal forms
 - Frontend login
 - Custom layouts
@@ -24,13 +28,7 @@
 
 ### Gitpod testing options
 
-When working on this template, things can be tested best on gitpod by modifying the launch link.
-
-**Testing project-template branches** Use the following link:
-
-```bash
-https://gitpod.io/new/#DP_PROJECT_NAME=lupus_decoupled,DP_ISSUE_BRANCH=1.x,DP_PROJECT_TYPE=project_module,DP_MODULE_VERSION=1.x,DP_PATCH_FILE=,FRONTEND_REPOSITORY=https%3A%2F%2Fgithub.com%2Fdrunomics%2Flupus-decoupled-nextjs-demo,CUSTOM_ELEMENTS_VERSION=3.*,DP_INSTALL_PROFILE=standard/https://github.com/drunomics/lupus-decoupled-project/tree/main
-```
+When working on this template, things can be tested best on gitpod by modifying the launch link:
 
 **Testing frontend repository branches**
 Use the following link:
