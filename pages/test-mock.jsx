@@ -1,10 +1,10 @@
 import Head from "next/head"
-import { fetchPage } from "../../lib/drupalClient"
-import Breadcrumbs from "../../components/Breadcrumbs"
-import Message from "../../components/Message"
-import DynamicComponent from "../../components/DynamicComponent"
-import { mockData, mockData2 } from "../../mockData"
-import "../../app/globals.css"
+import { fetchPage } from "../lib/drupalClient"
+import Breadcrumbs from "../components/Breadcrumbs"
+import Message from "../components/Message"
+import DynamicComponent from "../components/DynamicComponent"
+import { mockData, mockData2 } from "../mockData"
+import "../app/globals.css"
 
 export default function NodePage({ nodeData, error }) {
     if (error) return <div>Error loading node: {error}</div>
@@ -33,11 +33,8 @@ export default function NodePage({ nodeData, error }) {
 }
 
 export async function getServerSideProps(context) {
-    const { id } = context.params
-
     try {
-        const nodeData = await fetchPage(id)
-        // const nodeData = mockData2
+        const nodeData = mockData2
 
         if (!nodeData) {
             return {
