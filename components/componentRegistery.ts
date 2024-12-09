@@ -2,17 +2,16 @@ const requireComponent = require.context('./custom-elements', true, /\.(jsx|tsx)
 
 const components = {};
 
-function toKebabCase(str) {
-    return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
-}
-
+// Register all components
 requireComponent.keys().forEach((fileName) => {
     const componentName = fileName
-        .replace(/^\.\/(.*)\.(?:jsx|tsx)$/, '$1')
+        .replace(/^\.\//, '')
+        .replace(/\.(jsx|tsx)$/, '');
     
-    const kebabCaseName = toKebabCase(componentName);
-    
-    components[kebabCaseName] = requireComponent(fileName).default;
+    // Register the component with its exact name
+    components[componentName] = requireComponent(fileName).default;
 });
+
+console.log('Available custom-elements:', Object.keys(components));
 
 export default components;
